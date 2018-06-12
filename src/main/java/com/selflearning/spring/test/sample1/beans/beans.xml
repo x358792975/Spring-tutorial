@@ -6,5 +6,8 @@
 
 	<bean id="person"
 		class="com.selflearning.spring.test.sample1.Person">
+		<constructor-arg value="777" name="id"></constructor-arg>
+		<constructor-arg value="Sean" name="name"></constructor-arg>
+		<property name="taxId" value="123"></property>
 	</bean>
 </beans>
