@@ -1,15 +1,18 @@
-package com.selflearning.spring.test.sample1;
+package com.selflearning.spring.test.sample1.collections;
 
 import java.util.List;
+import java.util.Map;
 
-public class Person {
+import com.selflearning.spring.test.sample1.Car;
+
+public class Person2 {
 	private int age;
 	private String name;
 
 	private Car car;
-	private List<Car> cars;
+	private Map<String,Car> cars;
 	
-	public Person() {
+	public Person2() {
 
 	}
 
@@ -18,14 +21,9 @@ public class Person {
 		return "Person [age=" + age + ", name=" + name + ", cars=" + cars + "]";
 	}
 
-	public Person(int age, String name, List<Car> cars) {
-		super();
-		this.age = age;
-		this.name = name;
-		this.cars = cars;
-	}
 
-	public Person(int age, String name) {
+
+	public Person2(int age, String name) {
 		this.age = age;
 		this.name = name;
 	}
@@ -35,20 +33,14 @@ public class Person {
 	}
 
 
-	public Person(int age, String name, Car car) {
+	public Person2(int age, String name, Car car) {
 		super();
 		this.age = age;
 		this.name = name;
 		this.car = car;
 	}
 
-	public Person(int age, String name, Car car, List<Car> cars) {
-		super();
-		this.age = age;
-		this.name = name;
-		this.car = car;
-		this.cars = cars;
-	}
+
 
 	public int getAge() {
 		return age;
@@ -71,13 +63,15 @@ public class Person {
 		return car;
 	}
 
-	public List<Car> getCars() {
+	public Map<String, Car> getCars() {
 		return cars;
 	}
 
-	public void setCars(List<Car> cars) {
+	public void setCars(Map<String, Car> cars) {
 		this.cars = cars;
 	}
+
+
 
 	
 

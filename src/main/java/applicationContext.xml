@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<bean id="person"
+		class="com.selflearning.spring.test.sample1.Person">
+		<constructor-arg value="777"></constructor-arg>
+		<constructor-arg value="Sean" ></constructor-arg>
+	</bean>
+	<bean id="car" class="com.selflearning.spring.test.sample1.Car">
+		<constructor-arg value="Audi" index="0"></constructor-arg>
+		<constructor-arg value="Germany" index = "1"></constructor-arg>
+		<constructor-arg value="60000" type = "double"></constructor-arg>
+	</bean>
+	
+	<!--  
+	<bean  id="car2" class="com.selflearning.spring.test.sample1.Car">
+		<constructor-arg value="BMW" type="java.lang.String"></constructor-arg>
+	</bean>
+	-->
+	<bean id="person2" class="com.selflearning.spring.test.sample1.collections.Person2">
+		<property name="name" value="Rose"></property>
+		<property name="age" value="28"></property>
+		<property name="cars">
+			<map>
+				<entry key="AA" value-ref="car"></entry>
+				<entry key="AB" value-ref="car"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="dataSource" class="com.selflearning.spring.test.sample1.collections.DataSource">
+		<property name="properties">
+			<props>
+				<prop key="user">root</prop>
+				<prop key="password">12345</prop>
+				<prop key="jdbcurl">jdbc:mysql:///test</prop>
+				<prop key="driverClass">com.mysql.jdbc.Driver</prop>
+				
+			</props>
+		</property>
+	
+	</bean>
+	
+	<util:list id="cars">
+		<ref bean="car"/>
+		<ref bean="car2"/>
+	</util:list>
+	
+	<bean id="person4" class="com.selflearning.spring.test.sample1.collections.Person">
+		<property name="name" value="Jack"></property>
+		<property name="age" value="29"></property>
+		<property name="cars" ref="cars"></property>
+	</bean>
+	
+	<bean id="person5" class="com.selflearning.spring.test.sample1.collections.Person" p:age="30" p:name="Sean" p:cars-ref="cars">
+		
+	</bean>
+
+	
+	<bean id="person3" class="com.selflearning.spring.test.sample1.collections.Person">
+		<property name="name" value="Mike"></property>
+		<property name="age" value="26"></property>
+		<property name="cars">
+			<list>
+				<ref bean="car"/>
+				<ref bean="car2"/>
+				<bean class="com.selflearning.spring.test.sample1.Car">
+					<constructor-arg value="Toyota"></constructor-arg>
+					<constructor-arg value="Japan"></constructor-arg>
+					<constructor-arg value="200000" type="double"></constructor-arg>
+					
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>

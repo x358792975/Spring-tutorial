@@ -1,6 +1,8 @@
-package com.selflearning.spring.test.sample1;
+package com.selflearning.spring.test.sample1.collections;
 
 import java.util.List;
+
+import com.selflearning.spring.test.sample1.Car;
 
 public class Person {
 	private int age;
