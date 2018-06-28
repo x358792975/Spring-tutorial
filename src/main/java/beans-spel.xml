@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="address" class="com.selflearning.spring.test.sample1.spel.Address">
+		<property name="city" value="#{'New York City'}"></property>
+		<property name="street" value="Jewel Ave"></property>
+	</bean>
+
+
+	<bean id="car" class="com.selflearning.spring.test.sample1.spel.Car">
+		<property name="brand" value="Audi"></property>
+		<property name="price" value="60000"></property>
+		<!-- use static value of a class -->
+		<property name="tyrePerimeter" value="#{T(java.lang.Math).PI * 80}"></property>
+	</bean>
+	
+	
+	<bean id="person" class="com.selflearning.spring.test.sample1.spel.Person">
+		<!-- use spel to call other beans -->
+		<property name="car" value="#{car}"></property>
+		<!-- use spel to call other bean's property -->
+		<property name="city" value="#{address.city}"></property>
+		<!-- use spel to do operations -->
+		<property name="info" value="#{car.price >50000 ? 'mid-class' : 'low-class'}"></property>
+		
+		<property name="name" value="Sean"></property>
+	</bean>
+</beans>
