@@ -13,6 +13,10 @@
 		<config>src/main/java/beans-property.xml</config>
 		<config>src/main/java/beans-spel.xml</config>
 		<config>src/main/java/beans-cycle.xml</config>
+		<config>src/main/java/beans-factory.xml</config>
+		<config>src/main/java/beans-beanfactory.xml</config>
+		<config>src/main/java/beans-annotation.xml</config>
+		<config>src/main/java/beans-genneric-di.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

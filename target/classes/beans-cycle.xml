@@ -8,5 +8,13 @@
 	    destroy-method="destroy">
 		<property name="brand" value="BMW"></property>
 	</bean>
+	
+	<!--implement BeanPostProcessor interface and provide the before and after methods 
+		bean: instance of the bean
+		beanName: the name of bean in IOC
+		return bean: new bean, can be modified in the 2 methods above 
+	-->
+	<!--  don't need id, ioc recognizes it automatically -->
+	<bean class="com.selflearning.spring.test.sample1.cycle.MyBeanPostProcessor"></bean>
 
 </beans>
